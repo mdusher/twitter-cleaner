@@ -11,6 +11,7 @@ CONSUMER_KEY = ENV['TWITTER_CONSUMER_KEY']
 CONSUMER_SECRET = ENV['TWITTER_CONSUMER_SECRET']
 OAUTH_TOKEN = ENV['TWITTER_OAUTH_TOKEN']
 OAUTH_TOKEN_SECRET = ENV['TWITTER_OAUTH_TOKEN_SECRET']
+KEEP_TWEETS = ENV['KEEP_TWEETS'] || ""
 
 ### you shouldn't have to change anything below this line ###
 
@@ -78,6 +79,7 @@ end
 puts "#{tweets.length} tweets found"
 
 total_tweets = tweets.length
+tweets_to_keep = KEEP_TWEETS.gsub(/\s+/, "").split(',')
 tweets.each_with_index do |tweet, idx|
   begin
     idx += 1
@@ -85,6 +87,8 @@ tweets.each_with_index do |tweet, idx|
     tweet_age_in_days = (tweet_age/(24*60*60)).round
     if (tweet_age < MAX_AGE_IN_SECONDS) then
       puts "Ignored tweet #{tweet.id} (#{idx}/#{total_tweets})"
+    elsif tweets_to_keep.include?(tweet.id)
+      puts "Excluded tweet #{tweet.id} (#{idx}/#{total_tweets})"
     else
       puts "Deleted tweet #{tweet.id} (#{idx}/#{total_tweets})"
       delete_from_twitter(tweet, client)

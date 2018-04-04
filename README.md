@@ -26,6 +26,7 @@ On the "Keys and Access Tokens" page, you will also need to create yourself an "
 | TWITTER_CONSUMER_SECRET | | Your app consumer key secret (generated in Getting Started) |
 | TWITTER_OAUTH_TOKEN | | Your access token (generated in Getting Started) |
 | TWITTER_OAUTH_TOKEN_SECRET | | Your access token secret (generated in Getting Started) |
+| KEEP_TWEETS | | Comma separated list of tweets to keep |
 
 ## Building the image
 ```
