@@ -1,0 +1,7 @@
+version: '3'
+services:
+  cleaner:
+    build:
+      context: .
+    env_file: ./.env
+    
