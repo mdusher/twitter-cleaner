@@ -4,6 +4,10 @@ This container is designed as a "run once at intervals" (ie. crontab) rather tha
 
 Depending on what you enable, it will delete and unfavourite/unlike tweets older than x days.
 
+The delete and unfavourite scripts are modified versions of:
+* Unfav Tweets: https://gist.github.com/robinsloan/3688616
+* Delete Tweets https://gist.github.com/robinsloan/5cbb76d9f8ab7ec15b5c811dd671959a
+
 ## Getting started
 To get started you will need to setup an app on https://apps.twitter.com
 
