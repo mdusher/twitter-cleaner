@@ -79,7 +79,8 @@ end
 puts "#{tweets.length} tweets found"
 
 total_tweets = tweets.length
-tweets_to_keep = KEEP_TWEETS.gsub(/\s+/, "").split(',')
+tweets_to_keep = KEEP_TWEETS.gsub(/\s+/, "").split(',').map(&:to_i)
+puts tweets_to_keep.inspect
 tweets.each_with_index do |tweet, idx|
   begin
     idx += 1
