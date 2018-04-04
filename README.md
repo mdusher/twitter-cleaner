@@ -49,3 +49,7 @@ docker run --rm --name twitter-cleaner \
            -e "TWITTER_OAUTH_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
            twitter-cleaner
 ```
+
+## Running with docker-compose
+Let's be honest, this is way easier.
+Setup your `.env` file with your environment variables (example is provided) and then just run `docker-compose up` and bam. It builds and runs it for you.
