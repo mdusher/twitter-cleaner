@@ -87,7 +87,7 @@ tweets.each_with_index do |tweet, idx|
     tweet_age_in_days = (tweet_age/(24*60*60)).round
     if (tweet_age < MAX_AGE_IN_SECONDS) then
       puts "Ignored tweet #{tweet.id} (#{idx}/#{total_tweets})"
-    elsif tweets_to_keep.include?(tweet.id)
+    elsif tweets_to_keep.include?(tweet.id) then
       puts "Excluded tweet #{tweet.id} (#{idx}/#{total_tweets})"
     else
       puts "Deleted tweet #{tweet.id} (#{idx}/#{total_tweets})"
